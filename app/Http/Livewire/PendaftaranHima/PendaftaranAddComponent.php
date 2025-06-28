@@ -4,6 +4,7 @@ namespace App\Http\Livewire\PendaftaranHima;
 
 use Livewire\Component;
 use App\Models\Pendaftaran_himpunan;
+use App\Models\Divisi;
 
 
 class PendaftaranAddComponent extends Component
@@ -37,6 +38,9 @@ class PendaftaranAddComponent extends Component
     }
     public function render()
     {
-        return view('livewire.pendaftaran-hima.pendaftaran-add-component');
+        $divisi = Divisi::all();
+        return view('livewire.pendaftaran-hima.pendaftaran-add-component', [
+            'divisi' => $divisi
+        ])->layout('layouts.layout-admin');
     }
 }
