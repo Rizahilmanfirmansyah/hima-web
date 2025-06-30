@@ -26,9 +26,9 @@ use App\Http\Livewire\PendaftaranHima\PendaftaranAddComponent;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::group(['middleware' =>  ['auth']], function(){
     Route::group(['middleware' => ['role:admin']], function(){

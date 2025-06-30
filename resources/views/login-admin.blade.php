@@ -51,7 +51,7 @@
                 </div>
                 <div class="card login-form">
                     <div class="title text-center">
-                        <h3><b style="color: #2FDBBC;">The</b> Inventory</h3>
+                        <h3><b style="color: #215496;">HIMATIF</h3>
                     </div>
                     <div style="margin-top: 15px;">
                         @if (Session::has('notif'))

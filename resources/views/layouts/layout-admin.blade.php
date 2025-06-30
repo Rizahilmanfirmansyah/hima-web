@@ -119,14 +119,20 @@
                 <ul class="nav navbar-nav">
                     <li class="menu-title">Dashboard</li>
                     <li class="">
-                        <a href="{{route('#')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="#"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
-                    <li class="menu-title">Data Pengurus</li><!-- /.menu-title -->
+                    <li class="menu-title">Panel Admin</li><!-- /.menu-title -->
                     <li class="">
                         <a href="{{route('pengurus.all')}}"><i class="menu-icon fa fa-group"></i>Pengurus</a>
                     </li>
                     <li class="">
-                        <a href="{{route('#')}}"><i class="menu-icon fa fa-user"></i>Pendaftaran</a>
+                        <a href="#"><i class="menu-icon fa fa-user"></i>Pendaftaran</a>
+                    </li>
+                     <li class="">
+                        <a href="#"><i class="menu-icon fa fa-user"></i>Berita Acara</a>
+                    </li>
+                     <li class="">
+                        <a href="#"><i class="menu-icon fa fa-user"></i>Role Admin</a>
                     </li>
                     {{-- <li class="">
                         <a href="{{route('sales.all')}}"><i class="menu-icon fa fa-shopping-cart"></i>Sales</a>
@@ -292,7 +298,7 @@
                 <div class="navbar-header">
                     {{-- <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> --}}
-                    <a href="#" class="navbar-brand"><b style="color: #2FDBBC;">The </b>Inventory</a>
+                    <a href="#" class="navbar-brand"><b style="color:#215496">HIMATIF</a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>
             </div>

@@ -13,14 +13,12 @@ class LoginController extends Controller
     {
         if ($user = Auth::user()){
              if ($user->role == 'admin') {
-                return redirect()->intended('dashboard');
+                return redirect()->intended('all-pengurus');
             }elseif($user->role == 'normal_user'){
-                return redirect()->intended('all-product');
-            }elseif($user->role == 'supervisor_admin'){
-                return redirect()->intended('product-activity');
+                return redirect()->intended('all-pengurus');
             }
         }
-        return view('login');
+        return view('login-admin');
     }
 
     public function aksilogin(Request $request)
