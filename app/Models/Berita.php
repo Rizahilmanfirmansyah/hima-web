@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Berita extends Model
 {
     use HasFactory;
+
+    protected $table = 'tb_berita';
+    protected $fillable = [
+        'judul', 'slug', 'isi', 'thumbnail', 'kategori', 'penulis', 'status', 'published_at'
+    ];
 }

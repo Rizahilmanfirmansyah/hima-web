@@ -8,7 +8,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register');
+        return view('reg-admin');
     }
 
     public function aksireg(Request $request)

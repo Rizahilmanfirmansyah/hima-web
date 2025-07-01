@@ -16,6 +16,6 @@ class PendaftaranAllComponent extends Component
     }
     public function render()
     {
-        return view('livewire.pendaftaran-hima.pendaftaran-all-component');
+        return view('livewire.pendaftaran-hima.pendaftaran-all-component')->layout('layouts.layout-home');
     }
 }
