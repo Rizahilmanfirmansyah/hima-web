@@ -15,11 +15,11 @@ class Divisi extends Model
 
     public function pengurus()
     {
-        return $this->hasMany(Pengurus::class, 'id_pengurus');
+        return $this->hasMany(Pengurus::class, 'id');
     }
 
-     public function p_himpunan()
+     public function pendaftaran()
     {
-        return $this->hasMany(Pendaftaran_himpunan::class, 'id_pendaftaran');
+        return $this->hasMany(Pendaftaran_himpunan::class, 'id');
     }
 }

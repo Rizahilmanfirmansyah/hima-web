@@ -144,7 +144,7 @@
                         <a href="{{ route('pengurus.all') }}"><i class="menu-icon fa fa-group"></i>Pengurus</a>
                     </li>
                     <li class="">
-                        <a href="#"><i class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
+                        <a href="{{ route('pendaftaran.all')}}"><i class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
                     </li>
                     <li class="">
                         <a href="{{ route('berita.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>

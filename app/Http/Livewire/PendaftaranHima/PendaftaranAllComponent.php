@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\PendaftaranHima;
 
 use Livewire\Component;
-use App\Models\Pendaftaran_hima;
+use App\Models\Pendaftaran_himpunan;
 
 class PendaftaranAllComponent extends Component
 {
@@ -16,6 +16,9 @@ class PendaftaranAllComponent extends Component
     }
     public function render()
     {
-        return view('livewire.pendaftaran-hima.pendaftaran-all-component')->layout('layouts.layout-home');
+        $pendaftaran = Pendaftaran_himpunan::all();
+        return view('livewire.pendaftaran-hima.pendaftaran-all-component', [
+            'pendaftaran' => $pendaftaran
+        ])->layout('layouts.layout-admin');
     }
 }

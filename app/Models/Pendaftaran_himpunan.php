@@ -12,13 +12,9 @@ class Pendaftaran_himpunan extends Model
     protected $fillable = [
         'nama', 'motivasi', 'divisi_pilihan', 'status_seleksi', 'tanggal_daftar'
     ];
-
-
-
-
-    
+ 
     public function divisi()
     {
-        return $this->belongsTo(Divisi::class, 'id_divisi');
+        return $this->belongsTo(Divisi::class, 'divisi_pilihan');
     }
 }

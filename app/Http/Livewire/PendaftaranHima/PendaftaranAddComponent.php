@@ -21,12 +21,11 @@ class PendaftaranAddComponent extends Component
             'nama' => 'required',
             'motivasi' => 'required',
             'divisi_pilihan' => 'required',
-            'status_seleksi' => 'required',
             'tanggal_daftar' => 'required'
         ]);
 
-        $pendaftaran = new Pendaftaran_hima();
-        $pegurus->nama = $this->nama;
+        $pendaftaran = new Pendaftaran_himpunan();
+        $pendaftaran->nama = $this->nama;
         $pendaftaran->motivasi = $this->motivasi;
         $pendaftaran->divisi_pilihan = $this->divisi_pilihan;
         $pendaftaran->status_seleksi = 'diproses';
@@ -41,6 +40,6 @@ class PendaftaranAddComponent extends Component
         $divisi = Divisi::all();
         return view('livewire.pendaftaran-hima.pendaftaran-add-component', [
             'divisi' => $divisi
-        ])->layout('layouts.layout-admin');
+        ])->layout('layouts.layout-home');
     }
 }

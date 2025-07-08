@@ -40,7 +40,7 @@ use App\Http\Livewire\Berita\BeritaEditComponent;
 
 Route::group(['middleware' =>  ['auth']], function(){
     Route::group(['middleware' => ['role:admin']], function(){
-
+      
     });
     Route::group(['middleware' => ['role:normal_user']], function(){
 
@@ -49,6 +49,10 @@ Route::group(['middleware' =>  ['auth']], function(){
         
     });
 });
+  Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
+        Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
+        Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
+
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('aksilogin', [LoginController::class, 'aksilogin'])->name('aksilogin');
@@ -61,13 +65,15 @@ Route::get('all-divisi', DivisiAllComponent::class)->name('divisi.all');
 Route::get('add-divisi', DivisiAddComponent::class)->name('divisi.add');
 Route::get('edit-divisi/{id_divisi}', DivisiEditComponent::class)->name('divisi.edit');
 
-Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
-Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
-Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
+
 
 Route::get('add-berita', BeritaAddComponent::class)->name('berita.add');
 Route::get('all-berita', BeritaAllComponent::class)->name('berita.all');
 Route::get('edit-berita/{berita_id}', BeritaEditComponent::class)->name('berita.edit');
+
+Route::get('add-pendaftaran', PendaftaranAddComponent::class)->name('pendaftaran.add');
+Route::get('all-pendaftaran', PendaftaranAllComponent::class)->name('pendaftaran.all');
+Route::get('edit-pendaftaran/{pendaftaran_id}', PendaftaranEditComponent::class)->name('pendaftaran.edit');
 
 //home
 Route::get('home-user', HomeComponent::class)->name('user.home');

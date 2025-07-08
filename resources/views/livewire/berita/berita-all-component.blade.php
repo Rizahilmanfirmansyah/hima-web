@@ -30,7 +30,8 @@
                                 <div class="flex flex-wrap gap-1">
                                     @if ($thumbnails)
                                         @foreach ($thumbnails as $thumb)
-                                            <img src="{{ asset('assets/fotos/fotos')}}/{{$thumb}}" style="width: 50px" class="img-thumbnail" alt="thumb"
+                                            <img src="{{ asset('assets/fotos/fotos') }}/{{ $thumb }}"
+                                                style=" width: 50px; height: 50px" class="img-thumbnail" alt="thumb"
                                                 class="w-12 h-12 object-cover rounded">
                                         @endforeach
                                     @else
@@ -42,7 +43,7 @@
                             <td class="p-2 border">{{ $b->kategori }}</td>
 
                             <td class="p-2 border">
-                                <a href="{{ route('berita.edit',['berita_id' => $b->id])}}">Edit</a>
+                                <a href="{{ route('berita.edit', ['berita_id' => $b->id]) }}">Edit</a>
                             </td>
                         </tr>
                     @endforeach

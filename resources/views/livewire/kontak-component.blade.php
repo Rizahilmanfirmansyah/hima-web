@@ -11,7 +11,7 @@
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" wire:model="nama" required />
-              </div>
+              </div>  
               <div class="mb-3">
                 <label for="email" class="form-label">Email Aktif</label>
                 <input type="email" class="form-control" id="email" wire:model="email" required />

@@ -29,7 +29,7 @@
                 {{-- Isi --}}
                 <div class="form-group">
                     <label class="form-label"> Isi Berita</label>
-                    <textarea wire:model="isi" placeholder="Isi berita"></textarea>
+                    <textarea wire:model="isi" placeholder="Isi berita" class="form-control"></textarea>
                     @error('isi')
                         <span class="text-red-600 text-sm">{{ $message }}</span>
                     @enderror
@@ -73,7 +73,7 @@
                 {{-- Status --}}
                 <div class="form-group">
                     <label class="form-label"> Status</label>
-                    <select wire:model="status">
+                    <select wire:model="status" class="form-control">
                         <option value="">-- Pilih Status --</option>
                         <option value="draft">Draft</option>
                         <option value="published">Published</option>
@@ -92,7 +92,11 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-success">Simpan Berita</button>
+                <p class="form-group">
+                    <button type="submit" class="btn btn-success">Simpan Berita</button>
+
+                </p>
+
 
                 {{-- Flash message --}}
                 @if (session()->has('success'))
