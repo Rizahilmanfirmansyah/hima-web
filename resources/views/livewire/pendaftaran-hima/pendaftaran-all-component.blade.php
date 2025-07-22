@@ -1,7 +1,7 @@
 <div>
     <div class="card" style="width: auto">
         <div class="card-body">
-            <table class="table">
+            <table class="table" id="data">
                 <thead>
                     <tr>
                         <th>Nama</th>
@@ -15,13 +15,14 @@
                 <tbody>
                     @foreach ($pendaftaran as $p)
                         <tr>
-                            <td>{{$p->nama}}</td>
-                            <td>{{$p->motivasi}}</td>
-                            <td>{{$p->divisi->nama_divisi ?? ''}}</td>
-                            <td>{{$p->status}}</td>
-                            <td>{{$p->tanggal_daftar}}</td>
+                            <td>{{ $p->nama }}</td>
+                            <td>{{ $p->motivasi }}</td>
+                            <td>{{ $p->divisi->nama_divisi ?? '' }}</td>
+                            <td>{{ $p->status }}</td>
+                            <td>{{ $p->tanggal_daftar }}</td>
                             <td>
-                                <a href="{{ route('pendaftaran.edit', ['pendaftaran_id' => $p->id])}}" class="btn fa fa-pencil"></a>
+                                <a href="{{ route('pendaftaran.edit', ['pendaftaran_id' => $p->id]) }}"
+                                    class="btn fa fa-pencil"></a>
                             </td>
                         </tr>
                     @endforeach
@@ -30,6 +31,9 @@
 
             </table>
         </div>
+        <script>
+            new DataTable('#data');
+        </script>
 
     </div>
 </div>

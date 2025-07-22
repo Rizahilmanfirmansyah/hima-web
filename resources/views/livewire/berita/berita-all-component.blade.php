@@ -6,7 +6,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            <table class="table">
+            <table class="table" id="data">
                 <thead>
                     <tr class="bg-gray-100 text-left">
                         <th class="p-2 border">No</th>
@@ -53,8 +53,9 @@
 
         </div>
 
-
-        <h2 class="text-xl font-semibold mb-4">Daftar Berita</h2>
+        <script>
+            new DataTable('#data');
+        </script>
 
 
     </div>

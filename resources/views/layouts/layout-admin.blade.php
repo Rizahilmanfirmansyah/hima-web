@@ -143,6 +143,9 @@
                     <li class="">
                         <a href="{{ route('pengurus.all') }}"><i class="menu-icon fa fa-group"></i>Pengurus</a>
                     </li>
+                     <li class="">
+                        <a href="{{ route('divisi.all') }}"><i class="menu-icon fa fa-address-card"></i>Divisi</a>
+                    </li>
                     <li class="">
                         <a href="{{ route('pendaftaran.all')}}"><i class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
                     </li>
@@ -150,7 +153,7 @@
                         <a href="{{ route('berita.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>
                     </li>
                     <li class="">
-                        <a href="#"><i class="menu-icon fa fa-address-book"></i>Admin</a>
+                        <a href="{{ route('admin.all')}}"><i class="menu-icon fa fa-address-book"></i>Admin</a>
                     </li>
                     <li class="">
                         <a href="{{ route('admin.index')}}"><i class="menu-icon fa fa-sign-in"></i>Add Admin</a>

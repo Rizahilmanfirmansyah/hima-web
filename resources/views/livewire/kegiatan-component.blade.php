@@ -1,5 +1,5 @@
 <div>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    {{-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -41,5 +41,75 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div> --}}
+     <div class="container py-5">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card shadow-sm h-100">
+          <img src="{{ asset('assets/fotos/fotos/encep.jpeg')}}" class="card-img-top" alt="Seminar AI" />
+          <div class="card-body">
+            <h5 class="card-title">Seminar AI 2024</h5>
+            <p class="card-text">Seminar membahas kecerdasan buatan dan penerapannya di dunia kerja.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/kegiatan2.jpg" class="card-img-top" alt="Pelatihan Git" />
+          <div class="card-body">
+            <h5 class="card-title">Pelatihan Git</h5>
+            <p class="card-text">Belajar menggunakan Git untuk kolaborasi dalam pengembangan software.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/kegiatan3.jpg" class="card-img-top" alt="Lomba Coding" />
+          <div class="card-body">
+            <h5 class="card-title">Lomba Coding</h5>
+            <p class="card-text">Kompetisi pemrograman antar mahasiswa Teknik Informatika.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/kegiatan2.jpg" class="card-img-top" alt="Pelatihan Git" />
+          <div class="card-body">
+            <h5 class="card-title">Pelatihan Git</h5>
+            <p class="card-text">Belajar menggunakan Git untuk kolaborasi dalam pengembangan software.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 5 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/kegiatan2.jpg" class="card-img-top" alt="Pelatihan Git" />
+          <div class="card-body">
+            <h5 class="card-title">Pelatihan Git</h5>
+            <p class="card-text">Belajar menggunakan Git untuk kolaborasi dalam pengembangan software.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- card 6 -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card shadow-sm h-100">
+          <img src="assets/img/kegiatan2.jpg" class="card-img-top" alt="Pelatihan Git" />
+          <div class="card-body">
+            <h5 class="card-title">Pelatihan Git</h5>
+            <p class="card-text">Belajar menggunakan Git untuk kolaborasi dalam pengembangan software.</p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

@@ -63,3 +63,11 @@
         new DataTable('#data');
     </script>
 </div>
+  {{-- @foreach ($pengurus as $p)
+                <div class="col-6 col-md-4 col-lg-3 text-center">
+                    <img src="{{ asset('assets/fotos/fotos')}}/{{$p->foto}}" class="rounded img-fluid"
+                        style="width: 140px; height: 140px; object-fit: cover" alt="Ketua" />
+                    <h5 class="mt-2">{{$p->nama}}</h5>
+                    <p class="text-muted">{{$p->divisi->nama_jabatan}}</p>
+                </div>
+        @endforeach --}}

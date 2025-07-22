@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HIMATIF - Beranda</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('web-user/css/style.css') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 
 <body class="d-flex flex-column min-vh-100" style="font-family: 'Poppins', sans-serif">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #004aad">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000080">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{{ asset('assets/fotos/fotos/himatif.png') }}" alt="Logo HIMATIF" width="60"
@@ -27,7 +27,7 @@
                     <li class="nav-item"><a class="nav-link active" href="{{ route('user.home') }}">Beranda</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.about') }}">Tentang Kami</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.kegiatan') }}">Kegiatan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('user.daftar') }}">Daftar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('pendaftaran.add') }}">Daftar</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('user.kontak') }}">Kontak</a></li>
                 </ul>
             </div>
@@ -99,7 +99,13 @@
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" ></script>
+
+   
+
+
+
+
 </body>
 
 </html>
