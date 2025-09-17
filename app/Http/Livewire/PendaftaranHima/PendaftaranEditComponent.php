@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\PendaftaranHima;
 
 use Livewire\Component;
-use App\Models\Pendaftaran_hima;
+use App\Models\Pendaftaran_himpunan;
 use App\Models\Divisi;
 
 class PendaftaranEditComponent extends Component
@@ -16,12 +16,13 @@ class PendaftaranEditComponent extends Component
 
     public function mount($pendaftaran_id)
     {
-        $pendaftaran = Pendaftaran_hima::where('id', $pendaftaran_id)->first();
+        $pendaftaran = Pendaftaran_himpunan::where('id', $pendaftaran_id)->first();
         $this->nama = $pendaftaran->nama;
         $this->motivasi = $pendaftaran->motivasi;
         $this->divisi_pilihan = $pendaftaran->divisi_pilihan;
         $this->status_seleksi = $pendaftaran->status_seleksi;
         $this->tanggal_daftar = $pendaftaran->tanggal_daftar;
+        $this->pendaftaran_id = $pendaftaran->id;
     }
 
      public function editPendaftaran()
@@ -34,11 +35,11 @@ class PendaftaranEditComponent extends Component
             'tanggal_daftar' => 'required'
         ]);
 
-        $pendaftaran = Pendaftaran_hima::find($this->pendaftaran_id);
-        $pegurus->nama = $this->nama;
+        $pendaftaran = Pendaftaran_himpunan::find($this->pendaftaran_id);
+        $pendaftaran->nama = $this->nama;
         $pendaftaran->motivasi = $this->motivasi;
         $pendaftaran->divisi_pilihan = $this->divisi_pilihan;
-        $pendaftaran->status_seleksi = 'diproses';
+        $pendaftaran->status_seleksi = $this->status_seleksi;
         $pendaftaran->tanggal_daftar = $this->tanggal_daftar;
         $pendaftaran->save();
 
@@ -49,6 +50,9 @@ class PendaftaranEditComponent extends Component
 
     public function render()
     {
-        return view('livewire.pendaftaran-hima.pendaftaran-edit-component');
+        $divisis = Divisi::all();
+        return view('livewire.pendaftaran-hima.pendaftaran-edit-component', [
+            'divisis' => $divisis
+        ])->layout('layouts.layout-admin');
     }
 }

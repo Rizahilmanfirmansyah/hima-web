@@ -1,0 +1,29 @@
+.program-img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.hero {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-home {
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  padding: 8px;
+}

@@ -1,29 +1,38 @@
 <div>
     <div class="card" style="width: auto">
+
         <div class="card-body">
+            <div>
+                <a href="{{ route('berita.add') }}" class="btn btn-success">Add</a>
+            </div>
+            <br>
             @if (Session::has('notif'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">{{ Session::get('notif') }}
+                <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">{{ Session::get('notif') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
             <table class="table" id="data">
                 <thead>
                     <tr class="bg-gray-100 text-left">
-                        <th class="p-2 border">No</th>
-                        <th class="p-2 border">Judul</th>
-                        <th class="p-2 border">Thumbnail</th>
-                        <th class="p-2 border">Kategori</th>
-                        <th class="p-2 border">Aksi</th>
+                        {{-- <th class="">No</th> --}}
+                        <th class="">Judul</th>
+                        <th>Isi</th>
+                        <th class="">Thumbnail</th>
+                        <th class="">Kategori</th>
+                        <th>Status</th>
+                        <th>Publish</th>
+                        <th class="">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($berita as $index => $b)
                         <tr class="border-t">
-                            <td class="p-2 border">{{ $index + 1 }}</td>
-                            <td class="p-2 border">{{ $b->judul }}</td>
+                            {{-- <td class="">{{ $index + 1 }}</td> --}}
+                            <td class="">{{ $b->judul }}</td>
+                            <td>{{ $b->isi}}</td>
 
                             {{-- Tampilkan banyak thumbnail --}}
-                            <td class="p-2 border">
+                            <td class="">
                                 @php
                                     $thumbnails = json_decode($b->thumbnail, true);
                                 @endphp
@@ -40,9 +49,11 @@
                                 </div>
                             </td>
 
-                            <td class="p-2 border">{{ $b->kategori }}</td>
+                            <td class="">{{ $b->kategori->nama_kategori ?? '' }}</td>
+                            <td>{{$b->status}}</td>
+                            <td>{{$b->published_at}}</td>
 
-                            <td class="p-2 border">
+                            <td class="">
                                 <a href="{{ route('berita.edit', ['berita_id' => $b->id]) }}">Edit</a>
                             </td>
                         </tr>

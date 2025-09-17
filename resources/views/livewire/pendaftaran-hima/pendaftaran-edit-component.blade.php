@@ -7,7 +7,7 @@
                 </div>
             @endif
 
-            <form wire:submit.prevent="addPendaftaran">
+            <form wire:submit.prevent="editPendaftaran">
                 <div class="form-group">
                     <label for="" class="form-label">Nama</label>
                     <input type="text" class="form-control" wire:model="nama">
@@ -19,8 +19,8 @@
                 <div class="form-group">
                     <label for="" class="form-label">Divisi Pilihan</label>
                     <select name="" class="form-control" id="" wire:model="divisi_pilihan">
-                        @foreach ($divisi as $item)
-                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                        @foreach ($divisis as $item)
+                            <option value="{{ $item->id }}">{{ $item->nama_divisi }}</option>
                         @endforeach
                     </select>
                 </div>

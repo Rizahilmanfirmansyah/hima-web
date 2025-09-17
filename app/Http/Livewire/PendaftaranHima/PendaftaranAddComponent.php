@@ -40,6 +40,6 @@ class PendaftaranAddComponent extends Component
         $divisi = Divisi::all();
         return view('livewire.pendaftaran-hima.pendaftaran-add-component', [
             'divisi' => $divisi
-        ])->layout('layouts.layout-home');
+        ])->layout('layouts.layout-admin');
     }
 }

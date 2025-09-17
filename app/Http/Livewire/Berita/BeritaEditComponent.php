@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Berita;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Berita;
+use App\Models\Kategori;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 
@@ -14,7 +15,7 @@ class BeritaEditComponent extends Component
 
     public $berita_id;
     public $judul;
-    public $slug, $isi, $kategori, $penulis, $status, $published_at;
+    public $slug, $isi, $id_kategori, $penulis, $status, $published_at;
     public $thumbnail = []; // input baru
     public $existingthumbnail = []; // foto lama dari DB
 
@@ -24,7 +25,7 @@ class BeritaEditComponent extends Component
         $this->judul = $berita->judul;
         $this->slug = $berita->slug;
         $this->isi = $berita->isi;
-        $this->kategori = $berita->kategori;
+        $this->id_kategori = $berita->id_kategori;
         $this->penulis = $berita->penulis;
         $this->status = $berita->status;
         $this->published_at = $berita->published_at;
@@ -38,7 +39,7 @@ class BeritaEditComponent extends Component
             'slug' => 'required',
             'isi' => 'required',
             'thumbnail.*' => 'nullable|image|max:2048',
-            'kategori' => 'required',
+            'id_kategori' => 'required',
             'penulis' => 'required',
             'status' => 'required',
             'published_at' => 'required'
@@ -60,7 +61,7 @@ class BeritaEditComponent extends Component
         $berita->slug = $this->slug;
         $berita->isi = $this->isi;
         $berita->thumbnail = json_encode($imageNames);
-        $berita->kategori = $this->kategori;
+        $berita->id_kategori = $this->id_kategori;
         $berita->penulis = $this->penulis;
         $berita->status = $this->status;
         $berita->published_at = $this->published_at;
@@ -72,6 +73,9 @@ class BeritaEditComponent extends Component
 
     public function render()
     {
-        return view('livewire.berita.berita-edit-component')->layout('layouts.layout-admin');
+        $kategoriw = Kategori::all();
+        return view('livewire.berita.berita-edit-component', [
+            'kategoriw' => $kategoriw
+        ])->layout('layouts.layout-admin');
     }
 }

@@ -16,36 +16,26 @@
                     @endif
 
                     <form wire:submit.prevent="addPendaftaran">
-                        <div class="mb-3">
+                        <div class="form-group">
                             <label for="" class="form-label">Nama</label>
                             <input type="text" class="form-control" wire:model="nama">
-                            @error('nama')
-                                <span class="error">{{ $message }}</span>
-                            @enderror
-
                         </div>
-                        <div class="mb-3">
-                            <label for="" class="form-label">Motivasi</label>
+                        <div class="form-group">
+                            <label for="" class="from-label">Motivasi</label>
                             <input type="text" class="form-control" wire:model="motivasi">
                         </div>
-                        {{-- <div class="form-group">
-                            <label for="" class="form-label">Status Seleksi</label>
-                            <input type="text" class="form-control" wire:model="status_seleksi">
-                        </div> --}}
-                        <div class="mb-3">
+                        <div class="form-group">
                             <label for="" class="form-label">Divisi Pilihan</label>
                             <select name="" class="form-control" id="" wire:model="divisi_pilihan">
-                                <option value="" selected>Pilih Divisi</option>
-                                @foreach ($divisi as $d)
-                                    <option value="{{ $d->id }}">{{ $d->nama_divisi }}</option>
+                                @foreach ($divisi as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nama_divisi }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="mb-3">
+                        <div class="form-group">
                             <label for="" class="form-label">Tanggal Daftar</label>
                             <input type="date" class="form-control" wire:model="tanggal_daftar">
                         </div>
-                        <br>
                         <p class="form-group">
                             <button type="submit" class="btn btn-success">Add</button>
                         </p>

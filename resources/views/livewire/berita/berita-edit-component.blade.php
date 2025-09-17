@@ -54,7 +54,7 @@
                         <p class="mt-2 text-sm text-gray-600" class="form-label">Foto lama:</p>
                         <div class="flex gap-2">
                             @foreach ($existingthumbnail as $foto)
-                                <img src="{{ asset('assets/fotos/fotos') }}/{{$foto}}" width="100">
+                                <img src="{{ asset('assets/fotos/fotos') }}/{{ $foto }}" width="100">
                             @endforeach
                         </div>
                     @endif
@@ -63,12 +63,16 @@
                 {{-- Tampilkan foto lama --}}
 
                 <div class="form-group">
-                    <label for="" class="form-label">Kategori</label>
-                    <input type="text" wire:model="kategori" class="form-control" placeholder="Kategori">
+                    <label class="form-label"> Kategori</label>
+                    <select class="form-control" name="" id="" wire:model="id_kategori">
+                        <option value="" selected>Pilih Kategori</option>
+                        @foreach ($kategoriw as $item)
+                            <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                        @endforeach
+                    </select>
                     @error('kategori')
-                        <span class="text-red-600">{{ $message }}</span>
+                        <span class="text-red-600 text-sm">{{ $message }}</span>
                     @enderror
-
                 </div>
 
                 <div class="form-group">

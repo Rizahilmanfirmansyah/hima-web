@@ -20,7 +20,12 @@ use App\Http\Livewire\PendaftaranHima\PendaftaranAddComponent;
 use App\Http\Livewire\Berita\BeritaAddComponent;
 use App\Http\Livewire\Berita\BeritaAllComponent;
 use App\Http\Livewire\Berita\BeritaEditComponent;
+use App\Http\Livewire\Kategori\KategorEditComponent; 
+use App\Http\Livewire\Kategori\KategorAllComponent;            
+use App\Http\Livewire\Kategori\KategorAddComponent;            
 use App\Http\Livewire\ViewAdminComponent;
+
+
 
 
 
@@ -54,7 +59,6 @@ Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
 Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
 Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
 
-
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('aksilogin', [LoginController::class, 'aksilogin'])->name('aksilogin');
 Route::post('aksilogout', [LoginController::class, 'aksilogout'])->name('aksilogout');
@@ -73,6 +77,10 @@ Route::get('edit-berita/{berita_id}', BeritaEditComponent::class)->name('berita.
 Route::get('add-pendaftaran', PendaftaranAddComponent::class)->name('pendaftaran.add');
 Route::get('all-pendaftaran', PendaftaranAllComponent::class)->name('pendaftaran.all');
 Route::get('edit-pendaftaran/{pendaftaran_id}', PendaftaranEditComponent::class)->name('pendaftaran.edit');
+
+Route::get('add-kategori', KategorAddComponent::class)->name('kategori.add');
+Route::get('all-kategori', KategorAllComponent::class)->name('kategori.all');
+Route::get('edit-kategori/{id_kategori}', KategorEditComponent::class)->name('kategori.edit');
 
 //home
 Route::get('home-user', HomeComponent::class)->name('user.home');

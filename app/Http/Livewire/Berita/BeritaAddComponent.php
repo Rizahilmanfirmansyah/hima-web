@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Berita;
 
 use Livewire\Component;
 use App\Models\Berita;
+use App\Models\Kategori;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
@@ -17,7 +18,7 @@ class BeritaAddComponent extends Component
     public $slug;
     public $isi;
     public $thumbnail = [];
-    public $kategori;
+    public $id_kategori;
     public $penulis;
     public $status;
     public $published_at;
@@ -25,16 +26,16 @@ class BeritaAddComponent extends Component
 
     public function addBerita()
     {
-        $this->validate([
-            'judul' => 'required',
-            'slug' => 'required',
-            'isi' => 'required',
-            'thumbnail' => 'required',
-            'kategori' => 'required',
-            'penulis' => 'required',
-            'status' => 'required',
-            'published_at' => 'required'
-        ]);
+        // $this->validate([
+        //     'judul' => 'required',
+        //     'slug' => 'required',
+        //     'isi' => 'required',
+        //     'thumbnail' => 'required',
+        //     'id_kategori' => 'required',
+        //     'penulis' => 'required',
+        //     'status' => 'required',
+        //     'published_at' => 'required'
+        // ]);
 
         $imageNames = [];
 
@@ -49,7 +50,7 @@ class BeritaAddComponent extends Component
         $berita->slug = $this->slug;
         $berita->isi = $this->isi;
         $berita->thumbnail = json_encode($imageNames);
-        $berita->kategori = $this->kategori;
+        $berita->id_kategori = $this->id_kategori;
         $berita->penulis = $this->penulis;
         $berita->status = $this->status;
         $berita->published_at = $this->published_at;
@@ -62,6 +63,9 @@ class BeritaAddComponent extends Component
 
     public function render()
     {
-        return view('livewire.berita.berita-add-component')->layout('layouts.layout-admin');
+        $kategoriw = Kategori::all();
+        return view('livewire.berita.berita-add-component', [
+            'kategoriw' => $kategoriw
+        ])->layout('layouts.layout-admin');
     }
 }

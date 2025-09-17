@@ -54,8 +54,13 @@
 
                 {{-- Kategori --}}
                 <div class="form-group">
-                    <label class="form-label"> Kategori</label>
-                    <input class="form-control" type="text" wire:model="kategori" placeholder="Kategori">
+                    <label class="form-label">Kategori</label>
+                    <select class="form-control" name="" id="" wire:model="id_kategori">
+                        <option value="" selected>Pilih Kategori</option>
+                        @foreach ($kategoriw as $kategori)
+                            <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori }}</option>
+                        @endforeach
+                    </select>
                     @error('kategori')
                         <span class="text-red-600 text-sm">{{ $message }}</span>
                     @enderror
@@ -93,7 +98,7 @@
                 </div>
 
                 <p class="form-group">
-                    <button type="submit" class="btn btn-success">Simpan Berita</button>
+                    <button type="submit" class="btn btn-success">Simpan</button>
 
                 </p>
 
