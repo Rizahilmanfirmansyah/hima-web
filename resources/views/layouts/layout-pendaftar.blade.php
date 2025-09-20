@@ -131,192 +131,7 @@
 
 <body>
     <!-- Left Panel Menuuuuuuuuuuuu -->
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="menu-title">Dashboard</li>
-                    <li class="">
-                        <a href="{{ route('dashboard.admin')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li class="menu-title">Panel Admin</li><!-- /.menu-title -->
-                    <li class="">
-                        <a href="{{ route('pengurus.all') }}"><i class="menu-icon fa fa-group"></i>Pengurus</a>
-                    </li>
-                     <li class="">
-                        <a href="{{ route('divisi.all') }}"><i class="menu-icon fa fa-address-card"></i>Divisi</a>
-                    </li>
-                    <li class="">
-                        <a href="{{ route('pendaftaran.all')}}"><i class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
-                    </li>
-                    <li class="">
-                        <a href="{{ route('berita.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>
-                    </li>
-                     <li class="">
-                        <a href="{{ route('kategori.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Kategori Berita</a>
-                    </li>
-                    <li class="">
-                        <a href="{{ route('admin.all')}}"><i class="menu-icon fa fa-address-book"></i>Admin</a>
-                    </li>
-                    <li class="">
-                        <a href="{{ route('admin.index')}}"><i class="menu-icon fa fa-sign-in"></i>Add Admin</a>
-                    </li>
-
-                    {{-- <li class="">
-                        <a href="{{route('sales.all')}}"><i class="menu-icon fa fa-shopping-cart"></i>Sales</a>
-                    </li> --}}
-                    {{-- <li class="">
-                        <a href="{{route('suppliers.all')}}"><i class="menu-icon fa fa-truck"></i>Supplier</a>
-                    </li>
-                    <li class="menu-title">Product Item</li>
-                    <li class="">
-                        <a href="{{route('category.all')}}"><i class="menu-icon fa fa-tasks"></i>Kategori</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('product.all')}}"><i class="menu-icon fa fa-archive"></i>Products</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('product_masuk.all')}}"><i class="menu-icon fa fa-sign-in"></i>Product Masuk</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('product_keluar.all')}}"><i class="menu-icon fa fa-sign-out"></i>Product Keluar</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('retur.all')}}"><i class="menu-icon fa fa-inbox"></i>Product Retur</a>
-                    </li>
-                    <li class="menu-title">User Activity</li>
-                    @if (Auth::user()->role === 'admin')
-                    <li class="">
-                        <a href="{{route('user.all')}}"><i class="menu-icon fa fa-group"></i>Users</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('product.activity')}}"><i class="menu-icon fa fa-archive"></i>Aktivitas Produk</a>
-                    </li> 
-                    <li class="">
-                        <a href="{{route('product_masuk.activity')}}"><i class="menu-icon fa fa-arrow-circle-right"></i>Log Product Masuk</a>
-                    </li> 
-                    <li class="">
-                        <a href="{{route('product_keluar.activity')}}"><i class="menu-icon fa fa-arrow-circle-left"></i>Log Product Keluar</a>
-                    </li>  
-                    <li class="">
-                        <a href="{{route('retur.activity')}}"><i class="menu-icon fa fa-inbox"></i>Log Product Retur</a>
-                    </li>                        --}}
-                    {{-- @endif --}}
-
-                    {{-- <li class="menu-title">Order</li><!-- /.menu-title -->
-                    <li class="">
-                        <a href="{{route('')}}"><i class="menu-icon fa fa-cart-arrow-down"></i>
-                            Pesanan Masuk
-                            <span class="badge rounded-circle badge-notification text-light" style="background-color: #2FDBBC;">
-                                {{$count_pesananmasuk}}
-                            </span>
-                        </a>
-                    </li> --}}
-                    {{-- <li class="">
-                        <a href="{{route('')}}"><i class="menu-icon fa fa-shopping-cart"></i>
-                            Pesanan Siap
-                            <span class="badge rounded-circle badge-notification text-light" style="background-color: #2FDBBC;">
-                                {{$count_pesanansiapseller}}
-                            </span>
-                        </a>
-                    </li> --}}
-                    {{-- <li class="">
-                        <a href="{{route('admin.confirm')}}"><i class="menu-icon fa fa-shopping-cart"></i>
-                            Pesanan Konfirmasi
-                            <span class="badge rounded-circle badge-notification text-light" style="background-color: #2FDBBC;">
-                                {{$count_pesananconfirmseller}}
-                            </span>
-                        </a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('admin.batal')}}"><i class="menu-icon fa fa-shopping-cart"></i>
-                            Pesanan Dibatalkan
-                            <span class="badge rounded-circle badge-notification text-light" style="background-color: #2FDBBC;">
-                                {{$count_pesananbatal}}
-                            </span>
-                        </a>
-                    </li> --}}
-                    {{-- <li class="menu-title">Keuangan</li>
-                    <li class="">
-                        <a href="{{route('admin.total')}}"><i class="menu-icon fa fa-bar-chart"></i>Total Pengahasilan</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('admin.pesanansiap')}}"><i class="menu-icon fa fa-credit-card"></i>Ambil Saldo</a>
-                    </li>
-                    <li class="">
-                        <a href="{{route('admin.pesanansiap')}}"><i class="menu-icon fa fa-history"></i>History Penarikan</a>
-                    </li> --}}
-                    {{-- <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Dash</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
-                    </li> --}}
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside>
+   
     <!-- /#left-panel -->
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
@@ -327,7 +142,7 @@
                     {{-- <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a> --}}
                     <a href="#" class="navbar-brand"><b style="color:#215496">HIMATIF</b></a>
-                    <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+                    {{-- <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a> --}}
                 </div>
             </div>
             <div class="top-right">
@@ -420,7 +235,7 @@
                         {{-- <a class="nav-link" href="#"><i class="fa fa- user"></i>{{Auth::user()->name}}</a> --}}
                         <form action="{{ route('aksilogout') }}" method="post">
                             @csrf
-                            <button type="submit" class="btn btn-light">Logout</button>
+                            {{-- <button type="submit" class="btn btn-light">Logout</button> --}}
                         </form>
                         <div class="user-menu dropdown-menu">
                             <div class="container">
@@ -438,7 +253,7 @@
         <div class="content color">
             <br>
             {{-- @include('sweetalert::alert') --}}
-            @yield('content')
+            {{$slot}}
         </div>
         <!-- /.content -->
         {{-- <div class="clearfix"></div> --}}

@@ -13,7 +13,7 @@ class LoginController extends Controller
     {
         if ($user = Auth::user()){
              if ($user->role == 'admin') {
-                return redirect()->intended('all-pengurus');
+                return redirect()->intended('dashboard-admin');
             }elseif($user->role == 'normal_user'){
                 return redirect()->intended('all-pengurus');
             }
@@ -33,11 +33,11 @@ class LoginController extends Controller
         if(Auth::attempt($cek)){
             $user = Auth::user();
             if($user->role == 'admin'){
-                return redirect()->intended('dashboard');
+                return redirect()->intended('dashboard-admin');
             }elseif($user->role == 'normal_user'){
-                return redirect()->intended('all-product');
+                return redirect()->intended('');
             }elseif($user->role == 'supervisor_admin'){
-                return redirect()->intended('product-activity');
+                return redirect()->intended('');
             }
 
             return redirect()->intended('/');

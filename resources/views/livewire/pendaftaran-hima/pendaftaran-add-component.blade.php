@@ -37,7 +37,8 @@
                             <input type="date" class="form-control" wire:model="tanggal_daftar">
                         </div>
                         <p class="form-group">
-                            <button type="submit" class="btn btn-success">Add</button>
+                            <button type="submit" class="btn btn-success">Daftar</button>
+                            <a href="{{ route('user.home')}}" class="btn btn-secondary">Kembali</a>
                         </p>
                     </form>
                 </div>

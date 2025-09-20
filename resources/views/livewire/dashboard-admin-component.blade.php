@@ -1,5 +1,5 @@
 <div>
-    {{-- <h3>Dashboard Hi, {{Auth::user()->name}}</h3> --}}
+    <h3>Hi, {{Auth::user()->name}}</h3>
     <br>
     <div class="row">
         <div class="col-lg-3 col-md-6">
@@ -7,12 +7,12 @@
                 <div class="card-body">
                     <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-1">
-                            <i class="pe-7s-cash"></i>
+                            <i class="ti-user"></i>
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">{{$customer}}</span></div>
-                                <div class="stat-heading">Customer</div>
+                                <div class="stat-text"><span class="count">{{ $penguruse }}</span></div>
+                                <div class="stat-heading">Pengurus</div>
                             </div>
                         </div>
                     </div>
@@ -24,12 +24,12 @@
                 <div class="card-body">
                     <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-2">
-                            <i class="pe-7s-cart"></i>
+                            <i class="ti-view-grid"></i>
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">{{$supplier}}</span></div>
-                                <div class="stat-heading">Supplier</div>
+                                <div class="stat-text"><span class="count">{{ $divisi }}</span></div>
+                                <div class="stat-heading">Divisi</div>
                             </div>
                         </div>
                     </div>
@@ -41,12 +41,12 @@
                 <div class="card-body">
                     <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-3">
-                            <i class="pe-7s-browser"></i>
+                            <i class="ti-agenda"></i>
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">{{$product}}</span></div>
-                                <div class="stat-heading">Product</div>
+                                <div class="stat-text"><span class="count">{{ $daftar }}</span></div>
+                                <div class="stat-heading">Pendaftar</div>
                             </div>
                         </div>
                     </div>
@@ -58,48 +58,63 @@
                 <div class="card-body">
                     <div class="stat-widget-five">
                         <div class="stat-icon dib flat-color-4">
-                            <i class="pe-7s-users"></i>
+                            <i class="ti-video-camera"></i>
                         </div>
                         <div class="stat-content">
                             <div class="text-left dib">
-                                <div class="stat-text"><span class="count">{{$user}}</span></div>
-                                <div class="stat-heading">User</div>
+                                <div class="stat-text"><span class="count">{{ $berita }}</span></div>
+                                <div class="stat-heading">Berita</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-       
+
     </div>
     <div class="col-lg-12">
-        <div class="card">
+        <div class="card" style="width: auto;">
             <div class="card-header">
-                Product
+                Pengurus
             </div>
             <div class="card-body">
-                <table class="table table-head">
+                <table class="table" id="data">
                     <thead>
                         <tr>
-                            <th>Nama Produk</th>
-                            <th>Jumlah</th>
-                            <th>Kategori</th>
+                            <th>Nama Pengurus</th>
+                            <th>Divisi</th>
+                            <th>Jabatan</th>
+                            <th>Foto</th>
+                            <th>Periode</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($products as $product)
-                        <tr>
-                            <td>{{$product->nama}}</td>
-                            <td>{{$product->qty}}</td>
-                            <td>{{$product->category->name}}</td>              
-                        </tr>
-                        @endforeach
+                        @foreach ($pengurus as $p)
+                            <tr>
+                                <td>{{ $p->nama }}</td>
+                                <td>{{ $p->divisi->nama_divisi ?? '' }}</td>
+                                <td>{{ $p->jabatan }}</td>
+                                <td><img src="{{ asset('assets/fotos/fotos') }}/{{ $p->foto }}"
+                                        class="img-thumbnail" style=" width: 50px; height: 50px" alt=""></td>
+                                <td>{{ $p->periode }}</td>
+                            </tr>
+
                     </tbody>
+                    @endforeach
+
+
                 </table>
+
             </div>
+
         </div>
+        <script>
+            new DataTable('#data');
+        </script>
+
     </div>
-    {{-- <div class="col-lg-12">
+</div>
+{{-- <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
                 <strong class="card-title">Custom Table</strong>
@@ -183,11 +198,11 @@
             </div> <!-- /.table-stats -->
         </div>
     </div> --}}
-    <script>
-        new DataTable('#data-product', {
-            info: false,
-            order: false,
-            paging: false
-        });
-    </script>
+<script>
+    new DataTable('#data-product', {
+        info: false,
+        order: false,
+        paging: false
+    });
+</script>
 </div>

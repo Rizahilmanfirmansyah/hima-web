@@ -24,6 +24,8 @@ use App\Http\Livewire\Kategori\KategorEditComponent;
 use App\Http\Livewire\Kategori\KategorAllComponent;            
 use App\Http\Livewire\Kategori\KategorAddComponent;            
 use App\Http\Livewire\ViewAdminComponent;
+use App\Http\Livewire\DashboardAdminComponent;
+
 
 
 
@@ -46,43 +48,47 @@ use App\Http\Livewire\ViewAdminComponent;
 
 Route::group(['middleware' =>  ['auth']], function(){
     Route::group(['middleware' => ['role:admin']], function(){
+        
+        Route::get('dashboard-admin', DashboardAdminComponent::class)->name('dashboard.admin');
+
+        Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
+        Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
+        Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
+
+        Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
+        Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
+        Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
+
+        Route::get('add-divisi', DivisiAddComponent::class)->name('divisi.add');
+        Route::get('edit-divisi/{id_divisi}', DivisiEditComponent::class)->name('divisi.edit');
+
+        Route::get('add-berita', BeritaAddComponent::class)->name('berita.add');
+        Route::get('all-berita', BeritaAllComponent::class)->name('berita.all');
+        Route::get('edit-berita/{berita_id}', BeritaEditComponent::class)->name('berita.edit');
+
+        Route::get('add-kategori', KategorAddComponent::class)->name('kategori.add');
+        Route::get('all-kategori', KategorAllComponent::class)->name('kategori.all');
+        Route::get('edit-kategori/{id_kategori}', KategorEditComponent::class)->name('kategori.edit');
+
+        Route::get('all-pendaftaran', PendaftaranAllComponent::class)->name('pendaftaran.all');
+        Route::get('edit-pendaftaran/{pendaftaran_id}', PendaftaranEditComponent::class)->name('pendaftaran.edit');
       
     });
-    Route::group(['middleware' => ['role:normal_user']], function(){
-
-    });
-    Route::group(['middleware' => ['role:supervisor_admin']], function(){
-        
-    });
 });
-Route::get('all-pengurus', PengurusAllComponent::class)->name('pengurus.all');
-Route::get('add-pengurus', PengurusAddComponent::class)->name('pengurus.add');
-Route::get('edit-pengurus/{pengurus_id}', PengurusEditComponent::class)->name('pengurus.edit');
+
+        Route::get('all-divisi', DivisiAllComponent::class)->name('divisi.all');
+
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('aksilogin', [LoginController::class, 'aksilogin'])->name('aksilogin');
 Route::post('aksilogout', [LoginController::class, 'aksilogout'])->name('aksilogout');
-
 Route::get('reg-admin', [RegisterController::class, 'index'])->name('admin.index');
 Route::post('aksireg', [RegisterController::class, 'aksireg'])->name('aksireg');
 
-Route::get('all-divisi', DivisiAllComponent::class)->name('divisi.all');
-Route::get('add-divisi', DivisiAddComponent::class)->name('divisi.add');
-Route::get('edit-divisi/{id_divisi}', DivisiEditComponent::class)->name('divisi.edit');
-
-Route::get('add-berita', BeritaAddComponent::class)->name('berita.add');
-Route::get('all-berita', BeritaAllComponent::class)->name('berita.all');
-Route::get('edit-berita/{berita_id}', BeritaEditComponent::class)->name('berita.edit');
-
 Route::get('add-pendaftaran', PendaftaranAddComponent::class)->name('pendaftaran.add');
-Route::get('all-pendaftaran', PendaftaranAllComponent::class)->name('pendaftaran.all');
-Route::get('edit-pendaftaran/{pendaftaran_id}', PendaftaranEditComponent::class)->name('pendaftaran.edit');
 
-Route::get('add-kategori', KategorAddComponent::class)->name('kategori.add');
-Route::get('all-kategori', KategorAllComponent::class)->name('kategori.all');
-Route::get('edit-kategori/{id_kategori}', KategorEditComponent::class)->name('kategori.edit');
 
-//home
+//user
 Route::get('home-user', HomeComponent::class)->name('user.home');
 Route::get('about-user', AboutComponent::class)->name('user.about');
 Route::get('daftar-user', DaftarComponent::class)->name('user.daftar');

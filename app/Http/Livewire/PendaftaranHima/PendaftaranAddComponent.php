@@ -32,14 +32,14 @@ class PendaftaranAddComponent extends Component
         $pendaftaran->tanggal_daftar = $this->tanggal_daftar;
         $pendaftaran->save();
 
-        session()->flash('notif', 'Berhasil Di Tambahkan');
-        return redirect()->route('pendaftaran.all');
+        session()->flash('notif', 'Pendaftaran Berhasil Di Tambahkan');
+        return redirect()->route('pendaftaran.add');
     }
     public function render()
     {
         $divisi = Divisi::all();
         return view('livewire.pendaftaran-hima.pendaftaran-add-component', [
             'divisi' => $divisi
-        ])->layout('layouts.layout-admin');
+        ])->layout('layouts.layout-pendaftar');
     }
 }

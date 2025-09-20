@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>HiMATIF</title>
+    <title>HIMATIF</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -135,9 +135,10 @@
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    {{-- @if (Auth::user()->role === 'admin') --}}
                     <li class="menu-title">Dashboard</li>
                     <li class="">
-                        <a href="#"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="{{ route('dashboard.admin')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Panel Admin</li><!-- /.menu-title -->
                     <li class="">
@@ -153,7 +154,7 @@
                         <a href="{{ route('berita.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>
                     </li>
                      <li class="">
-                        <a href="{{ route('kategori.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Kategori Berita</a>
+                        <a href="{{ route('kategori.all')}}"><i class="menu-icon fa fa-th-list"></i>Kategori Berita</a>
                     </li>
                     <li class="">
                         <a href="{{ route('admin.all')}}"><i class="menu-icon fa fa-address-book"></i>Admin</a>
@@ -161,7 +162,7 @@
                     <li class="">
                         <a href="{{ route('admin.index')}}"><i class="menu-icon fa fa-sign-in"></i>Tambah Admin</a>
                     </li>
-
+                    {{-- @endif --}}
                     {{-- <li class="">
                         <a href="{{route('sales.all')}}"><i class="menu-icon fa fa-shopping-cart"></i>Sales</a>
                     </li> --}}
