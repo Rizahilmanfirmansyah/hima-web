@@ -3,11 +3,16 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Berita;
 
 class HomeComponent extends Component
 {
     public function render()
     {
-        return view('livewire.home-component')->layout('layouts.layout-home');
+        $beritas = Berita::where('status', 'draft')->get();
+        return view('livewire.home-component',[
+            'beritas' => $beritas
+        ]
+        )->layout('layouts.layout-home');
     }
 }

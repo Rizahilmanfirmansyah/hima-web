@@ -1,40 +1,50 @@
 <div>
     <!-- Filter Buttons -->
-    <div class="text-center mb-4">
-        <button class="btn btn-primary" wire:click="setFilter('all')"
+    <div class="text-center mb-4 mt-4">
+        <a href="#" style="text-decoration: none;" wire:click="setFilter('all')"
             class="px-4 py-2 mx-1 rounded {{ $filter == 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200' }}">
             Semua
-        </button>
+        </a>
 
         @foreach ($kategoris as $kategori)
-            <button class="btn btn-primary" wire:click="setFilter('{{ $kategori->nama_kategori }}')"
-                class="px-4 py-2 mx-1 rounded {{ $filter == $kategori->nama_kategori ? 'bg-blue-600 text-white' : 'bg-gray-200' }}">
+            <a href="#" style="text-decoration: none;" wire:click="setFilter('{{ $kategori->nama_kategori }}')"
+                class="px-4 py-2 mx-1 rounded mt-4 {{ $filter == $kategori->nama_kategori ? 'bg-blue-600 text-white' : 'bg-gray-200' }}">
                 {{ ucfirst($kategori->nama_kategori) }}
-            </button>
+            </a>
         @endforeach
     </div>
 
     <!-- Kegiatan Cards -->
     <div class="container my-5">
         <div class="row">
-            <!-- Card 1 -->
-            @forelse ($kegiatans as $kegiatan)
-                <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="card shadow-lg border-0 h-100">
-                        <img src="{{ asset('assets/fotos/fotos')}}/{{ $kegiatan->thumbnail }}" style=" height: 200px"
-                            class="card-img-top" alt="Seminar AI">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">{{ $kegiatan->judul }}</h5>
-                            <p class="card-text">{{ $kegiatan->isi }}</p>
-                            {{-- <span class="text-sm text-blue-500">{{ $kegiatan->kategori->nama_kategori }}</span> --}}
+            <td class="">
+                <!-- Card 1 -->
+                @forelse ($kegiatans as $kegiatan)
+                    <div class="col-md-3 mb-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card shadow-lg border-0 h-100">
+                            @php
+                                $thumbnails = json_decode($kegiatan->thumbnail, true);
+                            @endphp
+                            @if ($thumbnails)
+                                @foreach ($thumbnails as $item)
+                                    <img src="{{ asset('assets/fotos/fotos') }}/{{ $item }}"
+                                        style=" height: 200px" class="card-img-top" alt="Seminar AI">
+                                @endforeach
+                            @else
+                                <span class="text-gray-400 text-sm">-</span>
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{ $kegiatan->judul }}</h5>
+                                <p class="card-text">{{ $kegiatan->isi }}</p>
+                                {{-- <span class="text-sm text-blue-500">{{ $kegiatan->kategori->nama_kategori }}</span> --}}
 
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            @empty
-                <p class="col-span-3 text-center text-gray-500">Belum ada kegiatan.</p>
-            @endforelse
+                @empty
+                    <p class="col-span-3 text-center text-gray-500">Belum ada kegiatan.</p>
+                @endforelse
 
         </div>
 

@@ -67,7 +67,11 @@
                   </div>
                   <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                       <h2 class="text-warning">2</h2>
-                      <p>Seminar & Workshop</p>
+                      <p>Seminar</p>
+                  </div>
+                  <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                      <h2 class="text-warning">2</h2>
+                      <p>Workshop</p>
                   </div>
               </div>
           </div>

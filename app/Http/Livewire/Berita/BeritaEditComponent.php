@@ -38,7 +38,7 @@ class BeritaEditComponent extends Component
             'judul' => 'required',
             'slug' => 'required',
             'isi' => 'required',
-            'thumbnail.*' => 'nullable|image|max:2048',
+            'thumbnail.*' => 'nullable|image|max:8024',
             'id_kategori' => 'required',
             'penulis' => 'required',
             'status' => 'required',

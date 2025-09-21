@@ -27,9 +27,9 @@ class KegiatanFilter extends Component
     public function loadKegiatan()
     {
         if ($this->filter === 'all') {
-            $this->kegiatans = Berita::with('kategori')->get();
+            $this->kegiatans = Berita::where('status', 'published')->with('kategori')->get();
         } else {
-            $this->kegiatans = Berita::with('kategori')
+            $this->kegiatans = Berita::where('status', 'published')->with('kategori')
                 ->whereHas('kategori', function ($query) {
                     $query->where('nama_kategori', $this->filter);
                 })->get();

@@ -48,7 +48,7 @@
     </div> --}}
 
     <!-- Hero Section -->
-      <section class="text-center text-dark d-flex align-items-center bg-light" style="height: 300px">
+    <section class="text-center text-dark d-flex align-items-center bg-light" style="height: 300px">
         <div class="container mt-5">
             <h1 class="fw-bold">Selamat Datang di HIMATIF</h1>
             <h3 id="typing" style="color: #000080"></h3>
@@ -65,8 +65,10 @@
         <div class="card shadow-sm text-center">
             <div class="card-body">
                 <h5 class="card-title text-primary">Upcoming Event</h5>
-                <p class="card-text">Seminar: <strong>"AI untuk Solusi Bisnis"</strong><br>📅 25 September 2025</p>
-                <a href="#" class="btn btn-outline-primary">Lihat Detail</a>
+                @foreach ($beritas as $item)
+                    <p class="card-text"> {{ $item->judul}}<br>📅 {{$item->published_at}}</p>
+                    <a href="{{ route('user.kegiatan')}}" class="btn btn-outline-primary">Lihat Detail</a>
+                @endforeach
             </div>
         </div>
     </section>
@@ -103,7 +105,7 @@
                         <i class="bi bi-pencil-square fs-2 text-primary"></i>
                         <h5 class="mt-2">Pendaftaran</h5>
                         <p>Daftar sebagai anggota HIMATIF sekarang.</p>
-                        <a href="{{ route('pendaftaran.add')}}" class="btn btn-primary">Daftar</a>
+                        <a href="{{ route('pendaftaran.add') }}" class="btn btn-primary">Daftar</a>
                     </div>
                 </div>
             </div>
@@ -113,7 +115,7 @@
                         <i class="bi bi-calendar-event fs-2 text-success"></i>
                         <h5 class="mt-2">Agenda</h5>
                         <p>Lihat jadwal kegiatan HIMATIF terbaru sekarang.</p>
-                        <a href="{{ route('user.kegiatan')}}" class="btn btn-success">Lihat</a>
+                        <a href="{{ route('user.kegiatan') }}" class="btn btn-success">Lihat</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +125,7 @@
                         <i class="bi bi-envelope-fill fs-2 text-danger"></i>
                         <h5 class="mt-2">Kontak</h5>
                         <p>Hubungi kami untuk informasi lebih lanjut.</p>
-                        <a href="{{ route('user.about')}}" class="btn btn-danger">Hubungi</a>
+                        <a href="{{ route('user.about') }}" class="btn btn-danger">Hubungi</a>
                     </div>
                 </div>
             </div>

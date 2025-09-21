@@ -57,7 +57,7 @@ class BeritaAddComponent extends Component
         $berita->save();
 
         session()->flash('notif', 'berhasil');
-        return redirect()->route('berita.add');
+        return redirect()->route('berita.all');
 
     }
 
