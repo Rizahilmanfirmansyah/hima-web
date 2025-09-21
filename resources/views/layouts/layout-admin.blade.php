@@ -11,6 +11,7 @@
     <title>HIMATIF</title>
     <meta name="description" content="Ela Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="8">
 
     {{-- <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png"> --}}
     {{-- <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png"> --}}
@@ -138,29 +139,30 @@
                     {{-- @if (Auth::user()->role === 'admin') --}}
                     <li class="menu-title">Dashboard</li>
                     <li class="">
-                        <a href="{{ route('dashboard.admin')}}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="{{ route('dashboard.admin') }}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Panel Admin</li><!-- /.menu-title -->
                     <li class="">
                         <a href="{{ route('pengurus.all') }}"><i class="menu-icon fa fa-group"></i>Pengurus</a>
                     </li>
-                     <li class="">
+                    <li class="">
                         <a href="{{ route('divisi.all') }}"><i class="menu-icon fa fa-th-large"></i>Divisi</a>
                     </li>
                     <li class="">
-                        <a href="{{ route('pendaftaran.all')}}"><i class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
+                        <a href="{{ route('pendaftaran.all') }}"><i
+                                class="menu-icon fa fa-address-card"></i>Pendaftaran</a>
                     </li>
                     <li class="">
-                        <a href="{{ route('berita.all')}}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>
-                    </li>
-                     <li class="">
-                        <a href="{{ route('kategori.all')}}"><i class="menu-icon fa fa-th-list"></i>Kategori Berita</a>
+                        <a href="{{ route('berita.all') }}"><i class="menu-icon fa fa-newspaper-o"></i>Berita Acara</a>
                     </li>
                     <li class="">
-                        <a href="{{ route('admin.all')}}"><i class="menu-icon fa fa-address-book"></i>Admin</a>
+                        <a href="{{ route('kategori.all') }}"><i class="menu-icon fa fa-th-list"></i>Kategori Berita</a>
                     </li>
                     <li class="">
-                        <a href="{{ route('admin.index')}}"><i class="menu-icon fa fa-sign-in"></i>Tambah Admin</a>
+                        <a href="{{ route('admin.all') }}"><i class="menu-icon fa fa-address-book"></i>Admin</a>
+                    </li>
+                    <li class="">
+                        <a href="{{ route('admin.index') }}"><i class="menu-icon fa fa-sign-in"></i>Tambah Admin</a>
                     </li>
                     {{-- @endif --}}
                     {{-- <li class="">
@@ -535,6 +537,29 @@
     </script>
     <script>
         //sweet-alert
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('show-delete-confirmation', event => {
+                Swal.fire({
+                    title: 'Yakin ingin hapus?',
+                    text: "Data yang dihapus tidak bisa dikembalikan!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, hapus!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Livewire.emit('deleteConfirmed', event.detail.id);
+                        Swal.fire(
+                            'Terhapus!',
+                            'Data berhasil dihapus.',
+                            'success'
+                        )
+                    }
+                })
+            });
+        });
+
 
         //datatable
         new DataTable('#data-table', {

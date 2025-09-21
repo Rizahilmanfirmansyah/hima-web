@@ -3,11 +3,16 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Berita;
 
 class KegiatanComponent extends Component
 {
+
     public function render()
     {
-        return view('livewire.kegiatan-component')->layout('layouts.layout-home');
+        $kegiatane = Berita::all();
+        return view('livewire.kegiatan-component',[
+            'kegiatane' => $kegiatane
+        ])->layout('layouts.layout-home');
     }
 }

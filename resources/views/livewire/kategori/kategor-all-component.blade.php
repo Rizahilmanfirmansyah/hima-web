@@ -26,7 +26,7 @@
                             <td>
                                 <a href="{{ route('kategori.edit', ['id_kategori' => $kategori->id]) }}"
                                     class="btn btn-secondary fa fa-pencil"></a>
-                                <a href="#" wire:click.prevent="delete({{ $kategori->id }})"
+                                <a href="#" wire:click.prevent="confirmDelete({{ $kategori->id }})"
                                     class="btn btn-danger fa fa-trash"></a>
                             </td>
                         </tr>

@@ -112,7 +112,7 @@
                     <div class="card-body">
                         <i class="bi bi-calendar-event fs-2 text-success"></i>
                         <h5 class="mt-2">Agenda</h5>
-                        <p>Lihat jadwal kegiatan HIMATIF terbaru.</p>
+                        <p>Lihat jadwal kegiatan HIMATIF terbaru sekarang.</p>
                         <a href="{{ route('user.kegiatan')}}" class="btn btn-success">Lihat</a>
                     </div>
                 </div>

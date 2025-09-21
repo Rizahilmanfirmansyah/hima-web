@@ -11,49 +11,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
-<body  class="d-flex flex-column min-vh-100" style="font-family: 'Poppins', sans-serif">
+<body class="d-flex flex-column min-vh-100" style="font-family: 'Poppins', sans-serif">
     <!-- Navbar -->
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000080">
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="{{ asset('assets/fotos/fotos/himatif.png') }}" alt="Logo HIMATIF" width="60"
-                height="60" class="rounded-circle me-2" />
-            <strong>HIMATIF</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('user.home') ? 'active' : '' }}" 
-                       href="{{ route('user.home') }}">Beranda</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('user.about') ? 'active' : '' }}" 
-                       href="{{ route('user.about') }}">Tentang Kami</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('user.kegiatan') ? 'active' : '' }}" 
-                       href="{{ route('user.kegiatan') }}">Kegiatan</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->routeIs('user.kontak') ? 'active' : '' }}" 
-                       href="{{ route('user.kontak') }}">Kontak</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000080">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{{ asset('assets/fotos/fotos/himatif.png') }}" alt="Logo HIMATIF" width="60"
+                    height="60" class="rounded-circle me-2" />
+                <strong>HIMATIF</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('user.home') ? 'active' : '' }}"
+                            href="{{ route('user.home') }}">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('user.about') ? 'active' : '' }}"
+                            href="{{ route('user.about') }}">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('user.kegiatan') ? 'active' : '' }}"
+                            href="{{ route('user.kegiatan') }}">Kegiatan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('user.kontak') ? 'active' : '' }}"
+                            href="{{ route('user.kontak') }}">Kontak</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <div class="text-center" style="height: 600px; color: aqua; background-color: #000080 ">
         <Container class="md-3">
             <div style="height: 300px;">
                 <img src="{{ asset('assets/fotos/fotos/himatif.png') }}"
                     style="width: 150px; height: 150px; margin-top: 200px;" alt="">
-                <p class="text-white text-center mt-4">
+                <p class="text-white text-center mt-3 mb-0">
                     Himpunan Mahasiswa Teknik Informatika
                 </p>
+                <p class="text-white text-center mt-0 mb-0">
+                    Universitas Nasional PASIM
+                </p>
+                
             </div>
         </Container>
     </div>

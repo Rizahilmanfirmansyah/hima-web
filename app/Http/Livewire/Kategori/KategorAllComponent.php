@@ -7,13 +7,31 @@ use App\Models\Kategori;
 
 class KategorAllComponent extends Component
 {
-    public function delete($id)
+    protected $katId;
+    protected $listeners = ['deleteConfirmed' => 'deleteKat'];
+
+    public function mount()
     {
-        $kategori = Kategori::find('id', $id)->first();
-        $kategori->delete();
-        session()->flash('notif', 'Kategori Berhasil Di Hapus');
-        return redirect()->route('kategori.all');
+        $this->katId = Kategori::all();
     }
+
+     public function confirmDelete($id)
+    {
+        $this->dispatchBrowserEvent('show-delete-confirmation', ['id' => $id]);
+    }
+
+    public function deleteKat($id)
+    {
+        $kategori = Kategori::find($id);
+        if ($kategori){
+            $kategori->delete();
+            session()->flash('notif', 'berhasil dihapus');
+            $this->katId = Kategori::all();
+        }
+    }
+
+
+   
 
     public function render()
     {

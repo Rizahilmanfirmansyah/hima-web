@@ -27,7 +27,7 @@
                             <td>{{ $divisi->deskripsi }}</td>
                             <td>
                                 <a href="{{ route('divisi.edit', ['id_divisi' => $divisi->id]) }}" class="btn btn-secondary fa fa-pencil"></a>
-                                <a href="#" wire:click.prevent="delete({{ $divisi->id }})"
+                                <a href="#" wire:click="confirmDelete({{ $divisi->id }})"
                                     class="btn btn-danger fa fa-trash"></a>
                             </td>
                         </tr>

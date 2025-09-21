@@ -54,7 +54,9 @@
                             <td>{{$b->published_at}}</td>
 
                             <td class="">
-                                <a href="{{ route('berita.edit', ['berita_id' => $b->id]) }}">Edit</a>
+                                <a href="{{ route('berita.edit', ['berita_id' => $b->id]) }}" class="btn btn-secondary fa fa-pencil"></a>
+                                <br><br>
+                                <a href="#" wire:click.prevent='confirmDelete({{$b->id}})' class="btn btn-secondary fa fa-trash"></a>
                             </td>
                         </tr>
                     @endforeach

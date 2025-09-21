@@ -18,11 +18,14 @@
                             <td>{{ $p->nama }}</td>
                             <td>{{ $p->motivasi }}</td>
                             <td>{{ $p->divisi->nama_divisi ?? '' }}</td>
-                            <td>{{ $p->status }}</td>
+                            <td>{{ $p->status_seleksi }}</td>
                             <td>{{ $p->tanggal_daftar }}</td>
                             <td>
                                 <a href="{{ route('pendaftaran.edit', ['pendaftaran_id' => $p->id]) }}"
-                                    class="btn fa fa-pencil"></a>
+                                    class="btn btn-secondary fa fa-pencil"></a>
+                                <br><br>
+                                <a href="#" wire:click="confirmDelete({{ $p->id }})"
+                                    class="btn btn-danger fa fa-trash"></a>
                             </td>
                         </tr>
                     @endforeach

@@ -25,6 +25,14 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="" class="form-label">Status</label>
+                    <select name="" class="form-control" wire:model='status_seleksi' id="">
+                        <option value="diproses">Diproses</option>
+                        <option value="diterima">Diterima</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
                     <label for="" class="form-label">Tanggal Daftar</label>
                     <input type="date" class="form-control" wire:model="tanggal_daftar">
                 </div>

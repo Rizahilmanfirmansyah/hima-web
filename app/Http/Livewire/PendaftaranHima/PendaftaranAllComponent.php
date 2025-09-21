@@ -7,13 +7,31 @@ use App\Models\Pendaftaran_himpunan;
 
 class PendaftaranAllComponent extends Component
 {
-    public function delete($id)
+
+    public $pendId;
+
+    protected $listeners = ['deleteConfirmed' => 'deletePendaftar'];
+
+    public function mount()
     {
-        $pendaftaran = Pendaftaran_hima::find($id)->fist();
-        $pendaftaran->delete();
-        session()->flash('notif', 'berhasil ditambahkan');
-        return redirect()->route('pendaftaran.all');
+        $this->pendId = Pendaftaran_himpunan::all();
     }
+
+    public function confirmDelete($id)
+    {
+        $this->dispatchBrowserEvent('show-delete-confirmation', ['id' => $id]);
+    }
+
+     public function deletePendaftar($id)
+    {
+        $pendaftar = Pendaftaran_himpunan::find($id);
+        if ($pendaftar){
+            $pendaftar->delete();
+            session()->flash('notif', 'berhasil dihapus');
+            $this->pendId = Pendaftaran_himpunan::all();
+        }
+    }
+
     public function render()
     {
         $pendaftaran = Pendaftaran_himpunan::all();

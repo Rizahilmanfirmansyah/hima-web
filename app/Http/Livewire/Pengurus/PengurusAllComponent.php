@@ -7,12 +7,31 @@ use App\Models\Pengurus;
 
 class PengurusAllComponent extends Component
 {
-    public function deleteP($id)
+    public $pengId;
+
+    protected $listeners = ['deleteConfirmed' => 'deletePengurus'];
+
+    public function mount()
+    {
+        $this->pengId = Pengurus::all();
+    }
+
+    public function confirmDelete($id)
+    {
+        $this->dispatchBrowserEvent('show-delete-confirmation', ['id' => $id]);
+    }
+
+
+     public function deletePengurus($id)
     {
         $pengurus = Pengurus::find($id);
-        $pengurus->delete();
-        session()->flash('notif', 'berhasil di delete');
+        if ($pengurus){
+            $pengurus->delete();
+            session()->flash('notif', 'berhasil dihapus');
+            $this->pengId = Pengurus::all();
+        }
     }
+
 
     public function render()
     {

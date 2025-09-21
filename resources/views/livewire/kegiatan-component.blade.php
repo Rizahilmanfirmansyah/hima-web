@@ -8,7 +8,8 @@
     </section>
 
     <!-- Filter Tabs -->
-    <div class="container my-5">
+    <livewire:kegiatan-filter />
+    {{-- <div class="container my-5">
         <ul class="nav justify-content-center mb-4">
             <li class="nav-item"><a class="nav-link active" href="#">Semua</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Seminar</a></li>
@@ -52,7 +53,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Counter Section -->
     <section class="bg-light py-5 text-center">
@@ -80,20 +81,17 @@
 
     <!-- Galeri Foto -->
     <div class="">
-        <section class="container my-5" style="width: 700px;">
+        <section class="container my-5">
             <h2 class="text-center mb-4">Galeri Kegiatan</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('assets/fotos/fotos/mabim3.jpg') }}" class="d-block w-100" alt="Foto 1">
+                {{-- <div class="carousel-inner">
+                    @foreach ($kegiatane as $item)
+                      <div class="carousel-item active">
+                        <img src="{{ asset('assets/fotos/fotos')}}/{{$item->foto}}" class="d-block w-100" alt="Foto 1">
                     </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('assets/fotos/fotos/mabim2.jpg') }}" class="d-block w-100" alt="Foto 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('assets/fotos/fotos/mabim 4.jpg') }}" class="d-block w-100" alt="Foto 3">
-                    </div>
-                </div>
+                        
+                    @endforeach
+                </div> --}}
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>

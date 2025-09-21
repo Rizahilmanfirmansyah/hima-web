@@ -35,35 +35,27 @@
                             <td>{{ $p->periode }}</td>
                             <td>
                                 <div class="form-group">
-                                     <a href="{{ route('pengurus.edit', ['pengurus_id' => $p->id]) }}"
-                                    class="btn btn-success fa fa-pencil"></a>
+                                    <a href="{{ route('pengurus.edit', ['pengurus_id' => $p->id]) }}"
+                                        class="btn btn-success fa fa-pencil"></a>
 
                                 </div>
-                               
+
                                 <div class="form-group">
-                                     <a href="#" wire:click.prevent="deleteP({{ $p->id }})"
-                                    class="btn btn-danger fa fa-trash"></a>
-
+                                    <a href="#" wire:click.prevent="confirmDelete({{ $p->id }})"
+                                        class="btn btn-danger fa fa-trash"></a>
                                 </div>
-                               
-
                             </td>
                         </tr>
-
                 </tbody>
                 @endforeach
-
-
             </table>
-
         </div>
-
     </div>
     <script>
         new DataTable('#data');
     </script>
 </div>
-  {{-- @foreach ($pengurus as $p)
+{{-- @foreach ($pengurus as $p)
                 <div class="col-6 col-md-4 col-lg-3 text-center">
                     <img src="{{ asset('assets/fotos/fotos')}}/{{$p->foto}}" class="rounded img-fluid"
                         style="width: 140px; height: 140px; object-fit: cover" alt="Ketua" />

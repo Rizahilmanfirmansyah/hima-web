@@ -58,20 +58,16 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-3 mb-4" data-aos="fade-up">
-                      <h2 class="text-primary">120+</h2>
+                      <h2 class="text-primary">24</h2>
                       <p>Anggota Aktif</p>
                   </div>
                   <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-                      <h2 class="text-success">15</h2>
+                      <h2 class="text-success">12</h2>
                       <p>Program Kerja</p>
                   </div>
                   <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-                      <h2 class="text-warning">10</h2>
+                      <h2 class="text-warning">2</h2>
                       <p>Seminar & Workshop</p>
-                  </div>
-                  <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-                      <h2 class="text-danger">5</h2>
-                      <p>Prestasi Nasional</p>
                   </div>
               </div>
           </div>
