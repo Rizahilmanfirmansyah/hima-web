@@ -1,15 +1,15 @@
 <div>
     <!-- Filter Buttons -->
     <div class="text-center mb-4 mt-4">
-        <a href="#" style="text-decoration: none;" wire:click="setFilter('all')"
+        <a href="#" style="text-decoration: none;" wire:click.prevent="setFilter('all')"
             class="px-4 py-2 mx-1 rounded {{ $filter == 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200' }}">
             Semua
         </a>
 
         @foreach ($kategoris as $kategori)
-            <a href="#" style="text-decoration: none;" wire:click="setFilter('{{ $kategori->nama_kategori }}')"
+            <a href="#" style="text-decoration: none;" wire:click.prevent="setFilter('{{ $kategori->nama_kategori }}')"
                 class="px-4 py-2 mx-1 rounded mt-4 {{ $filter == $kategori->nama_kategori ? 'bg-blue-600 text-white' : 'bg-gray-200' }}">
-                {{ ucfirst($kategori->nama_kategori) }}
+                {{($kategori->nama_kategori) }}
             </a>
         @endforeach
     </div>

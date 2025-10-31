@@ -82,16 +82,15 @@
     <!-- Galeri Foto -->
     <div class="">
         <section class="container my-5">
-            <h2 class="text-center mb-4">Galeri Kegiatan</h2>
+            <h2 class="text-center mb-4">Berita Terbaru</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                {{-- <div class="carousel-inner">
+                <div class="carousel-inner">
                     @foreach ($kegiatane as $item)
                       <div class="carousel-item active">
-                        <img src="{{ asset('assets/fotos/fotos')}}/{{$item->foto}}" class="d-block w-100" alt="Foto 1">
-                    </div>
-                        
+                        <img src="{{ asset('assets/fotos/fotos')}}/{{$item}}" class="d-block w-100" alt="Foto 1">
+                    </div>  
                     @endforeach
-                </div> --}}
+                </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>

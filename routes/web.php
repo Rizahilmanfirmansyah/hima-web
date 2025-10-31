@@ -76,10 +76,10 @@ Route::group(['middleware' =>  ['auth']], function(){
     });
 });
 
-        Route::get('all-divisi', DivisiAllComponent::class)->name('divisi.all');
+ Route::get('all-divisi', DivisiAllComponent::class)->name('divisi.all');
 
 
-Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/log-admin', [LoginController::class, 'index'])->name('login');
 Route::post('aksilogin', [LoginController::class, 'aksilogin'])->name('aksilogin');
 Route::post('aksilogout', [LoginController::class, 'aksilogout'])->name('aksilogout');
 Route::get('reg-admin', [RegisterController::class, 'index'])->name('admin.index');
@@ -89,7 +89,7 @@ Route::get('add-pendaftaran', PendaftaranAddComponent::class)->name('pendaftaran
 
 
 //user
-Route::get('home-user', HomeComponent::class)->name('user.home');
+Route::get('/', HomeComponent::class)->name('user.home');
 Route::get('about-user', AboutComponent::class)->name('user.about');
 Route::get('daftar-user', DaftarComponent::class)->name('user.daftar');
 Route::get('kegiatan-user', KegiatanComponent::class)->name('user.kegiatan');

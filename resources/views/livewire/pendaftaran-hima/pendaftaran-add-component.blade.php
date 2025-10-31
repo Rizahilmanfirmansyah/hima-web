@@ -16,29 +16,45 @@
                     @endif
 
                     <form wire:submit.prevent="addPendaftaran">
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <label for="" class="form-label">Nama</label>
                             <input type="text" class="form-control" wire:model="nama">
+                            @error('nama')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <label for="" class="from-label">Motivasi</label>
                             <input type="text" class="form-control" wire:model="motivasi">
+                            @error('motivasi')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <label for="" class="form-label">Divisi Pilihan</label>
                             <select name="" class="form-control" id="" wire:model="divisi_pilihan">
+                                <option value="#">Pilih Divisi</option>
                                 @foreach ($divisi as $item)
                                     <option value="{{ $item->id }}">{{ $item->nama_divisi }}</option>
                                 @endforeach
                             </select>
+                            @error('divisi_pilihan')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mt-3">
                             <label for="" class="form-label">Tanggal Daftar</label>
                             <input type="date" class="form-control" wire:model="tanggal_daftar">
+                            @error('tanggal_daftar')
+                                <p class="text-danger">{{ $message }}</p>
+                            @enderror
                         </div>
-                        <p class="form-group">
+                        <p class="form-group mt-3">
                             <button type="submit" class="btn btn-success">Daftar</button>
-                            <a href="{{ route('user.home')}}" class="btn btn-secondary">Kembali</a>
+                            <a href="{{ route('user.home') }}" class="btn btn-secondary">Kembali</a>
+                            @error('sukses')
+                                <span class="text-success">{{ $message }}</span>
+                            @enderror
                         </p>
                     </form>
                 </div>
