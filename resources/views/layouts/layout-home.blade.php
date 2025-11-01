@@ -72,7 +72,7 @@
 
 <body class="d-flex flex-column min-vh-100" style="font-family: 'Poppins', sans-serif">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #000080">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #060658">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <img src="{{ asset('assets/fotos/fotos/himatif.png') }}" alt="Logo HIMATIF" width="60"
@@ -108,7 +108,7 @@
             </div>
         </div>
     </nav>
-
+{{-- 
     <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
 
@@ -157,7 +157,7 @@
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
         </div>
-    </div>
+    </div> --}}
 
     <!-- Tambahkan CSS di <head> -->
 
